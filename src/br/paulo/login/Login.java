@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 public class Login {
 	
-	Register registro = new Register();
-	List<String> usuarios;
-	Scanner ler;
-	String entrada, userLogado;
+	private Register registro = new Register();
+	private List<String> usuarios;
+	private Scanner ler;
+	private String entrada, userLogado;
 
 	public void Login() {
 		
-		System.out.print("Login>>1\nRegistrar>>2\n>>");
+		System.out.print("1- Login\n2- Registrar Acesso\n>>");
 		entrada = ler.nextLine();
 		
 		if(Integer.parseInt(entrada) == 1) {
@@ -36,8 +36,9 @@ public class Login {
 	/*
 	 * Função responsável por criar um novo usuário no sistema
 	 */
-	private void registerUser() {
+	public void registerUser() {
 		usuarios.add(registro.Register());
+		System.out.println("Usuário registrado.");
 	}
 	
 	/*
