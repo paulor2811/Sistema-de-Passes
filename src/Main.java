@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+import br.paulo.gerenciar.Gerenciar;
 import br.paulo.login.Login;
 
 public class Main {
@@ -12,6 +13,9 @@ public class Main {
 		
 		Login login = new Login();
 		login.InitObjects();
+		
+		Gerenciar ger;
+		
 		while(true) {
 			login.Login();
 			if(login.getUserLogado() != null) {
@@ -29,8 +33,11 @@ public class Main {
 							entrada = ler.nextLine();
 							if(Integer.parseInt(entrada) == 1) {
 								login.registerUser();
-							}
-							if(Integer.parseInt(entrada) == 0) {
+							} else if(Integer.parseInt(entrada) == 2) {
+								System.out.print("User>> ");
+								entrada = ler.nextLine();
+								ger = new Gerenciar("6", login.getList(), entrada);
+							} else if(Integer.parseInt(entrada) == 0) {
 								break; // Sobe
 							}
 						}

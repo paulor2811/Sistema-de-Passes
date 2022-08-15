@@ -56,4 +56,8 @@ public class Login {
 	public void setUserLogado(String userLogado) {
 		this.userLogado = userLogado;
 	}
+	
+	public List<String> getList() {
+		return usuarios;
+	}
 }
